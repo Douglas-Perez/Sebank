@@ -19,7 +19,7 @@ namespace Sebank
                 Console.WriteLine("1 -> Ver saldo da conta.");
                 Console.WriteLine("2 -> Fazer um depósito.");
                 Console.WriteLine("3 -> Sacar um valor.");
-                Console.WriteLine("4 -> Sair");
+                Console.WriteLine("4 -> Sair\n");
                 teste = int.TryParse(Console.ReadLine(), out acao);
                 Console.Clear();
                 if (acao > 4 || acao < 1 || !teste)
