@@ -20,9 +20,24 @@ namespace Sebank
             Console.WriteLine($"Saldo atual: {Saldo}");
         }
 
-        public void Deposito(float deposito)
+        public void Deposito()
         {
-            Saldo += deposito;
+            float valor;
+            bool teste;
+
+            do
+            {
+                Console.WriteLine("Digite o valor que deseja depositar.");
+                ExibirSaldo();
+                teste = float.TryParse(Console.ReadLine(), out valor);
+                Console.Clear();
+                if (!teste || valor < 0)
+                {
+                    Console.WriteLine("Erro. Valor inválido!");
+                }
+            } while (!teste || valor < 0);
+
+            Saldo += valor;
         }
 
         public void Sacar(float saque)

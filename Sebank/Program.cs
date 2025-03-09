@@ -62,16 +62,7 @@ namespace Sebank
                         break;
 
                     case 2:
-                        do
-                        {
-                            if(quantia < 0)
-                            {
-                            Console.WriteLine("Valor inválido");
-                            }
-                            Verificador("depositar");
-                        } while (quantia < 0) ;
-
-                        conta.Deposito(quantia);
+                        conta.Deposito();
                         conta.ExibirSaldo();
                         Espera();
                         break;
