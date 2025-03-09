@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace Sebank
 
         public void ExibirSaldo()
         {
-            Console.WriteLine($"Saldo atual: {Saldo}");
+            Console.WriteLine($"Saldo atual: R$ {Saldo}");
         }
 
         public void Deposito()
@@ -29,6 +30,7 @@ namespace Sebank
             {
                 Console.WriteLine("Digite o valor que deseja depositar.");
                 ExibirSaldo();
+                Console.Write("R$ ");
                 teste = float.TryParse(Console.ReadLine(), out valor);
                 Console.Clear();
                 if (!teste || valor < 0)
@@ -40,9 +42,27 @@ namespace Sebank
             Saldo += valor;
         }
 
-        public void Sacar(float saque)
+        public void Sacar()
         {
-            Saldo -= saque;
+            float valor;
+            bool teste;
+            do
+            {
+                Console.WriteLine("Digite o valor que deseja sacar.");
+                ExibirSaldo();
+                Console.Write("R$ ");
+                teste = float.TryParse(Console.ReadLine(), out valor);
+                Console.Clear();
+                if (!teste || valor < 0)
+                {
+                    Console.WriteLine("Erro. Valor inválido!");
+                }
+                if (valor > Saldo)
+                {
+                    Console.WriteLine($"Erro. A quantia solicitada ultrapassa o saldo atual em R${valor - Saldo}");
+                }
+            } while (!teste || valor < 0 || valor > Saldo);
+            Saldo -= valor;
         }
     }
 }

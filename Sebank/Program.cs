@@ -9,22 +9,6 @@ namespace Sebank
         public static bool teste= true;
         public static float quantia;
 
-        public static void Verificador(string ds)
-        {
-            float valor;
-            do
-            {
-            Console.WriteLine($"Digite o valor que deseja {ds}.");
-            conta.ExibirSaldo();
-            teste = float.TryParse(Console.ReadLine(), out valor);
-            Console.Clear();
-                if (!teste)
-                {
-                Console.WriteLine("Por favor, digite um valor válido.");
-                }
-            } while (!teste) ;
-             quantia = valor;
-        }
         public static ContaCorrente conta = new ContaCorrente();
         public static void Espera()
         {
@@ -68,17 +52,7 @@ namespace Sebank
                         break;
 
                     case 3:
-                        do
-                        {
-                            if (quantia > conta.Saldo || quantia < 0)
-                            {
-                                Console.WriteLine($"Valor inválido. A quantia solicitada ultrapassa o saldo atual em {quantia - conta.Saldo}");
-                                conta.ExibirSaldo();
-                            }
-                            Verificador("sacar");
-                        } while (quantia > conta.Saldo || quantia < 0);
-                        
-                        conta.Sacar(quantia);
+                        conta.Sacar();
                         conta.ExibirSaldo();
                         Espera();
                         break;
