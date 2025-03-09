@@ -29,7 +29,8 @@ namespace Sebank
                         break;
 
                     case 4:
-                        Console.WriteLine("Obrigado por usar nosso banco");
+                        Console.WriteLine("Obrigado por usar nosso banco\n\nPressione qualquer tecla para fechar.");
+                        Console.Read();
                         return;
                 }
             }

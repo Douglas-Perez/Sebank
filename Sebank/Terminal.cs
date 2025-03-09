@@ -24,7 +24,7 @@ namespace Sebank
                 Console.Clear();
                 if (acao > 4 || acao < 1 || !teste)
                 {
-                    Console.WriteLine("Por favor, escolha uma das ações abaixo:\n");
+                    Console.WriteLine("Erro! Valor inválido.\nEscolha uma das ações abaixo:\n");
                 }
             } while (acao > 4 || acao < 1 || !teste);
             return acao;

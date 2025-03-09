@@ -35,7 +35,7 @@ namespace Sebank
                 Console.Clear();
                 if (!teste || valor < 0)
                 {
-                    Console.WriteLine("Erro. Valor inválido!");
+                    Console.WriteLine("Erro! Valor inválido.");
                 }
             } while (!teste || valor < 0);
 
@@ -55,11 +55,11 @@ namespace Sebank
                 Console.Clear();
                 if (!teste || valor < 0)
                 {
-                    Console.WriteLine("Erro. Valor inválido!");
+                    Console.WriteLine("Erro! Valor inválido.");
                 }
                 if (valor > Saldo)
                 {
-                    Console.WriteLine($"Erro. A quantia solicitada ultrapassa o saldo atual em R${valor - Saldo}");
+                    Console.WriteLine($"Erro! A quantia solicitada ultrapassa o saldo atual em R${valor - Saldo}");
                 }
             } while (!teste || valor < 0 || valor > Saldo);
             Saldo -= valor;
