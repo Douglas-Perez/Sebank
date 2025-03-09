@@ -7,29 +7,25 @@ namespace Sebank
         static void Main(string[] args)
         {
             ContaCorrente conta = new();
-            Terminal terminal = new();
             while (true)
             {
-
-                Console.WriteLine("Bem-vindo ao Sebank!\nO que gostaria de fazer?\n");
-                
-                switch (terminal.ExibirTerminal())
+                switch (Terminal.ExibirTerminal())
                 {
                     case 1:
                         conta.ExibirSaldo();
-                        terminal.Esperar();
+                        Terminal.Esperar();
                         break;
 
                     case 2:
                         conta.Deposito();
                         conta.ExibirSaldo();
-                        terminal.Esperar();
+                        Terminal.Esperar();
                         break;
 
                     case 3:
                         conta.Sacar();
                         conta.ExibirSaldo();
-                        terminal.Esperar();
+                        Terminal.Esperar();
                         break;
 
                     case 4:

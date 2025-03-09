@@ -9,10 +9,11 @@ namespace Sebank
 {
     class Terminal
     {
-        public int ExibirTerminal()
+        public static int ExibirTerminal()
         {
             int acao;
             bool teste;
+            Console.WriteLine("Bem-vindo ao Sebank!\nO que gostaria de fazer?\n");
             do
             {
                 Console.WriteLine("1 -> Ver saldo da conta.");
@@ -29,7 +30,7 @@ namespace Sebank
             return acao;
         }
 
-        public void Esperar()
+        public static void Esperar()
         {
             Console.WriteLine("\nPressione Enter para continuar");
             Console.ReadLine();
